@@ -7,9 +7,20 @@ class FudmaaSpider(scrapy.Spider):
     # Name per spider class has to be unique for a given project.
     name = "fudmaa"
 
-    start_urls = [
-        'https://www.funda.nl/koop/groningen/',
-    ]
+
+    def __init__(self, **kw):
+        super(FudmaaSpider, self).__init__(**kw)
+        # get url specified in script
+        url = kw.get('url') or kw.get('domain') or 'https://www.funda.nl/koop/groningen/'
+        # add 'https://' to url if needed
+        if not url.startswith('http://') and not url.startswith('https://'):
+            url = 'http://%s/' % url
+        # define starting url
+        self.url = url
+
+    # requests should return iterable
+    def start_requests(self):
+        return [scrapy.Request(self.url, callback=self.parse)]
 
     # Method that will be called to handle the response downloaded for each fo the requests made.
     # The response parameter is an instance of TextResponse that holds the page content
@@ -28,6 +39,7 @@ class FudmaaSpider(scrapy.Spider):
             # plot area sometimes not specified
             plot_area = listing.css('span[title="Perceeloppervlakte"]::text').get(default="")
             rooms = listing.css('ul.search-result-kenmerken ').get()
+            broker = listing.css('span.search-result-makelaar-name::text').get()
             link = listing.css('a').attrib['href']
             
             yield {
@@ -40,6 +52,8 @@ class FudmaaSpider(scrapy.Spider):
                 # number of rooms need to be extracted out of string of couple lines with at multiple times numbers in it
                 # subsitute every character but a number out of last 5 characters of string cut off at point " kamers"
                 'rooms': re.sub('[^0-9]+','', (rooms.rpartition(' kamers')[0])[-5:]),
+                # remove spaces in front and at end of string with .strip()
+                'broker': broker.strip(),
                 'link': "https://www.funda.nl" + link
             }
         
