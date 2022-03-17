@@ -57,7 +57,8 @@ class FudmaaSpider(scrapy.Spider):
                 'link': "https://www.funda.nl" + link
             }
         
-
+        
+        # automatically scrape next page
         next_page = response.css('a[rel="next"]').attrib['href']
         if next_page is not None:
             yield response.follow(next_page, callback=self.parse)

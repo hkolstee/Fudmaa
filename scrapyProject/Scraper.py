@@ -17,7 +17,7 @@ class Scraper:
         # Spider you want to run
         self.spider = FudmaaSpider
         # specify settings
-        self.process.settings.attributes["FEEDS"].value = {output_filename: {"format": output_format}}
+        self.process.settings.attributes["FEEDS"].value = {"output/" + output_filename: {"format": output_format}}
         # self.process.settings.attributes["FEED_FORMAT"] = output_format
         
 
