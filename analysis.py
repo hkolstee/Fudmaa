@@ -31,7 +31,6 @@ class DataAnalyser:
         average = total/len(self.json_load)
         print("average price: €"  + "{:.2f}".format(average))
 
-    def average
     
 
 def main():

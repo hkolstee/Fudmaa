@@ -35,8 +35,8 @@ class FudmaaSpider(scrapy.Spider):
             title = listing.css('h2.search-result__header-title.fd-m-none::text').get()
             price = listing.css('span.search-result-price::text').get()
             location = listing.css('h4.search-result__header-subtitle.fd-m-none::text').get()
-            living_space = listing.css('span[title="Gebruiksoppervlakte wonen"]::text').get()
-            # plot area sometimes not specified
+            # living/plot area sometimes not specified
+            living_space = listing.css('span[title="Gebruiksoppervlakte wonen"]::text').get(default="")
             plot_area = listing.css('span[title="Perceeloppervlakte"]::text').get(default="")
             rooms = listing.css('ul.search-result-kenmerken ').get()
             broker = listing.css('span.search-result-makelaar-name::text').get()
@@ -57,7 +57,7 @@ class FudmaaSpider(scrapy.Spider):
                 'link': "https://www.funda.nl" + link
             }
         
-        
+
         # automatically scrape next page
         next_page = response.css('a[rel="next"]').attrib['href']
         if next_page is not None:
