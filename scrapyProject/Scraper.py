@@ -2,6 +2,7 @@ from scrapyProject.scrapyProject.spiders.fudmaa_spider import FudmaaSpider
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
 import os
+import datetime
 
 class Scraper:
     def __init__(self, url, output_filename, output_format):
@@ -14,11 +15,14 @@ class Scraper:
         # use path from Fudmaa folder to settings.py
         os.environ.setdefault('SCRAPY_SETTINGS_MODULE', 'scrapyProject.scrapyProject.settings')
         self.process = CrawlerProcess(get_project_settings())
+
         # Spider you want to run
         self.spider = FudmaaSpider
-        # specify settings
-        self.process.settings.attributes["FEEDS"].value = {"output/" + output_filename: {"format": output_format}}
-        # self.process.settings.attributes["FEED_FORMAT"] = output_format
+
+        # specify settings (output location and file name/format)
+        date = datetime.datetime.now()
+        output_filename = "output/" + output_filename + "_" + date.strftime("%d-%m-%Y")+ "." + output_format
+        self.process.settings.attributes["FEEDS"].value = {output_filename: {"format": output_format, "overwrite": True}}
         
 
     def run_scraper(self):
