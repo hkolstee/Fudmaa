@@ -29,8 +29,11 @@ def do_geocode(address, attempt=1, max_attempts=5):
         raise
 
 def addressToCoords():
+    # specify file here (for now)
+    file = "output/amsterdam.json"
+
     # make data frame
-    df = pd.read_json(path_or_buf = "output/amsterdam.json", typ ='frame')
+    df = pd.read_json(path_or_buf = file, typ ='frame')
 
     # create coord column from location
     # we start with location without postal code because that breaks it
@@ -57,7 +60,7 @@ def addressToCoords():
 
     # print(1)
     # write out
-    df.to_csv(path_or_buf = "output/amsterdam.csv", index = True)
+    df.to_csv(path_or_buf = (re.sub('.json', '.csv', filename), index = True)
 
 if __name__ == "__main__":
     addressToCoords()

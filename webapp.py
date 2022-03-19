@@ -7,9 +7,11 @@ import os
 st.write("""
 # Simple data visualization of scraped data from funda.
 """)
+file1 = "output/amsterdam.csv"
+file2 = "output/nunspeet_18-03-2022.csv"
 
-df_amsterdam = pd.read_csv("output/amsterdam.csv")
-df_nunspeet = pd.read_csv("output/nunspeet_18-03-2022.csv")
+df_amsterdam = pd.read_csv(file1)
+df_nunspeet = pd.read_csv(file2)
 # df_groningen = pd.read_csv("output/groningen.csv")
 
 df_amsterdam['latitude']=pd.to_numeric(df_amsterdam['latitude']) 
