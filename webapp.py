@@ -7,28 +7,25 @@ import os
 st.write("""
 # Simple data visualization of scraped data from funda.
 """)
-file1 = "output/amsterdam.csv"
-file2 = "output/nunspeet_18-03-2022.csv"
 
-df_amsterdam = pd.read_csv(file1)
-df_nunspeet = pd.read_csv(file2)
-# df_groningen = pd.read_csv("output/groningen.csv")
+csv_files = []
+csv_dataframes = []
 
-df_amsterdam['latitude']=pd.to_numeric(df_amsterdam['latitude']) 
-df_amsterdam['longitude']=pd.to_numeric(df_amsterdam['longitude'])
-
-df_nunspeet['latitude']=pd.to_numeric(df_nunspeet['latitude']) 
-df_nunspeet['longitude']=pd.to_numeric(df_nunspeet['longitude'])
-
-# df_groningen['latitude']=pd.to_numeric(df_groningen['latitude']) 
-# df_groningen['longitude']=pd.to_numeric(df_groningen['longitude'])
+# iterate over .csv files
+for file in os.scandir('output/'):
+    if file.is_file():
+        # print(filename.path)
+        if (file.path[-4:] == ".csv"):
+            print(file.path)
+            csv_files.append(file.path)
+            
+# read csv files as dataframes
+for file in csv_files:
+    csv_dataframes.append(pd.read_csv(file))
 
 # drop NaN
-df_amsterdam = df_amsterdam.dropna(subset=['longitude'])
-df_nunspeet = df_nunspeet.dropna(subset=['longitude'])
-# df_groningen = df_groningen.dropna(subset=['longitude'])
+csv_dataframes = map(lambda df : df.dropna(subset=['longitude']), csv_dataframes)
 
-# paint map figure
-st.map(df_amsterdam)
-st.map(df_nunspeet)
-# st.map(df_groningen)
+# print on page
+for df in csv_dataframes:
+    st.map(df)
