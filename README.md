@@ -5,7 +5,6 @@ Funda data scraper using Python Scrapy. Analysis on this data using NumPy.
 Scrapy 2.6.1  
 Python 3.8.5  
 Numpy 1.22.3  
-pytz 2022.1
 
 ## How to use
 Specify funda(index) URL, output filename, and output format in the main.py file.  
