@@ -1,12 +1,16 @@
 # Fudmaa
-Funda data scraper using Python Scrapy. Analysis on this data using NumPy(not done). Data visualization web app using Streamlit and Pandas.  
+Funda data scraper using Python Scrapy.  
+Analysis on this data using NumPy(not done).  
+Data visualization web app using Streamlit and Pandas.  
+Address to coordinate using GeoPy with Nominatim.  
 
 ## Dependencies
 Scrapy 2.6.1  
 Python 3.8.5  
 Numpy 1.22.3  
-Pandas 1.16.0
-streamlit 1.8.1
+Pandas 1.16.0  
+Streamlit 1.8.1  
+GeoPy 2.2.0  
 
 ## How to use
 Specify funda(index) URL, output filename, and output format when running main.py.  
