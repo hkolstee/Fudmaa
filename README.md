@@ -2,7 +2,7 @@
 Funda data scraper using Python Scrapy. 
 
 ## Dependencies
-Scrapy 2.6.1
+Scrapy 2.6.1  
 Python 3.8.5
 
 ## How to use
