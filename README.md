@@ -1,10 +1,12 @@
 # Fudmaa
-Funda data scraper using Python Scrapy. Analysis on this data using NumPy.  
+Funda data scraper using Python Scrapy. Analysis on this data using NumPy(not done). Data visualization web app using Streamlit and Pandas.  
 
 ## Dependencies
 Scrapy 2.6.1  
 Python 3.8.5  
 Numpy 1.22.3  
+Pandas 1.16.0
+streamlit 1.8.1
 
 ## How to use
 Specify funda(index) URL, output filename, and output format when running main.py.  
