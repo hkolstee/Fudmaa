@@ -24,10 +24,6 @@ __python3 main.py "https://www.funda.nl/koop/amsterdam" amsterdam json__
 Output in Fudmaa/output.  
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
 
 ### Convert address to coordinates
 --------------------
@@ -37,10 +33,6 @@ Change addressToCords.py to use your .json file (currently only supports json im
 __python3 addressToCords.py__  
 
 May take a while... output in Fudmaa/output/  
-<br>
-<br>
-<br>
-<br>
 <br>
 <br>
 
