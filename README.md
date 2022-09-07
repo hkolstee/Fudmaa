@@ -38,7 +38,7 @@ May take a while... output in Fudmaa/output/
 
 ### Run webserver to visualize data on map  
 --------------------
-Change in webapp.py what files should be visualized.
+to do: Change in webapp.py what files should be visualized.
 
 __streamlit run webapp.py__  
 
