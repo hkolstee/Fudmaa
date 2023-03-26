@@ -1,9 +1,9 @@
 # Fudmaa
-Funda data scraper using Python Scrapy.
-Scrapes all current listings, and all information, off of funda.
-Can be specific to city, postal code, etc.
-Analysis on this data using NumPy(TODO).  
-Data visualization web app using Streamlit and Pandas.  
+Funda data scraper using Python Scrapy.  
+Scrapes all current listings, and all information, off of funda.  
+Can be specific to city, postal code, etc.  
+Analysis on this data (TODO).
+Data visualization web app using Streamlit.  
 Address to coordinate using GeoPy with Nominatim.  
 
 ## Dependencies
