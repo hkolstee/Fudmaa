@@ -22,7 +22,7 @@ Specify funda(index) URL, output filename, and output format when running main.p
 example call:  
 
 ```console
-foo@bar:~$ python3 main.py "https://www.funda.nl/koop/amsterdam" amsterdam json
+foo@bar:path/to/Fudmaa$ python3 main.py "https://www.funda.nl/koop/amsterdam" amsterdam json
 ```
 
 Output in Fudmaa/output.  
@@ -35,7 +35,7 @@ Output in Fudmaa/output.
 Change addressToCords.py to use your .json file (currently only supports json import).  
 
 ```console
-foo@bar:~$ python3 addressToCords.py
+foo@bar:path/to/Fudmaa$ python3 addressToCords.py
 ```
 
 May take a while... output in Fudmaa/output/  
@@ -47,7 +47,7 @@ May take a while... output in Fudmaa/output/
 to do: Change in webapp.py what files should be visualized.
 
 ```console
-foo@bar:~$ streamlit run webapp.py
+foo@bar:path/to/Fudmaa$ streamlit run webapp.py
 ```
 
 
