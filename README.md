@@ -21,7 +21,9 @@ GeoPy 2.2.0
 Specify funda(index) URL, output filename, and output format when running main.py.  
 example call:  
 
-__python3 main.py "https://www.funda.nl/koop/amsterdam" amsterdam json__  
+```console
+foo@bar:~$ python3 main.py "https://www.funda.nl/koop/amsterdam" amsterdam json
+```
 
 Output in Fudmaa/output.  
 <br>
@@ -32,7 +34,9 @@ Output in Fudmaa/output.
 
 Change addressToCords.py to use your .json file (currently only supports json import).  
 
-__python3 addressToCords.py__  
+```console
+foo@bar:~$ python3 addressToCords.py
+```
 
 May take a while... output in Fudmaa/output/  
 <br>
@@ -42,7 +46,9 @@ May take a while... output in Fudmaa/output/
 --------------------
 to do: Change in webapp.py what files should be visualized.
 
-__streamlit run webapp.py__  
+```console
+foo@bar:~$ streamlit run webapp.py
+```
 
 
 
