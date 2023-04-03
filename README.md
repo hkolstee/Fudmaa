@@ -1,7 +1,9 @@
 # Fudmaa
 Funda data scraper using Python Scrapy.  
-Analysis on this data using NumPy(not done).  
-Data visualization web app using Streamlit and Pandas.  
+Scrapes all current listings, and all information, off of funda.  
+Can be specific to city, postal code, etc.  
+Analysis on this data (TODO).
+Data visualization web app using Streamlit.  
 Address to coordinate using GeoPy with Nominatim.  
 
 ## Dependencies
@@ -19,7 +21,9 @@ GeoPy 2.2.0
 Specify funda(index) URL, output filename, and output format when running main.py.  
 example call:  
 
-__python3 main.py "https://www.funda.nl/koop/amsterdam" amsterdam json__  
+```console
+foo@bar:path/to/Fudmaa$ python3 main.py "https://www.funda.nl/koop/amsterdam" amsterdam json
+```
 
 Output in Fudmaa/output.  
 <br>
@@ -30,7 +34,9 @@ Output in Fudmaa/output.
 
 Change addressToCords.py to use your .json file (currently only supports json import).  
 
-__python3 addressToCords.py__  
+```console
+foo@bar:path/to/Fudmaa$ python3 addressToCords.py
+```
 
 May take a while... output in Fudmaa/output/  
 <br>
@@ -38,9 +44,11 @@ May take a while... output in Fudmaa/output/
 
 ### Run webserver to visualize data on map  
 --------------------
-Change in webapp.py what files should be visualized.
+to do: Change in webapp.py what files should be visualized.
 
-__streamlit run webapp.py__  
+```console
+foo@bar:path/to/Fudmaa$ streamlit run webapp.py
+```
 
 
 
